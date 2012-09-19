@@ -1,0 +1,87 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: beamerpostertest.aux
+The style file: plainnat.bst
+Database file #1: testwhyR.bib
+I was expecting an "="---line 121 of file testwhyR.bib
+ : @article 
+ :          {i1710,
+I'm skipping whatever remains of this entry
+I was expecting an "="---line 163 of file testwhyR.bib
+ : @article 
+ :          {i1611,
+I'm skipping whatever remains of this entry
+I was expecting an "="---line 439 of file testwhyR.bib
+ : @article 
+ :          {i1470,
+I'm skipping whatever remains of this entry
+I was expecting an "="---line 693 of file testwhyR.bib
+ : @article 
+ :          {i1714,
+I'm skipping whatever remains of this entry
+I was expecting an "="---line 843 of file testwhyR.bib
+ : @article 
+ :          {i1272,
+I'm skipping whatever remains of this entry
+I was expecting an "="---line 893 of file testwhyR.bib
+ : @article 
+ :          {i1698,
+I'm skipping whatever remains of this entry
+I was expecting an "="---line 959 of file testwhyR.bib
+ : @article 
+ :          {i1716,
+I'm skipping whatever remains of this entry
+I was expecting an "="---line 1025 of file testwhyR.bib
+ : @article 
+ :          {i1605,
+I'm skipping whatever remains of this entry
+I was expecting an "="---line 1065 of file testwhyR.bib
+ : @book 
+ :       {i1617,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "i1698"
+Warning--empty journal in i1608
+Warning--empty journal in i1705
+Warning--can't use both author and editor fields in i1606
+Warning--there's a number but no series in i1606
+You've used 4 entries,
+            2773 wiz_defined-function locations,
+            621 strings with 5327 characters,
+and the built_in function-call counts, 1452 in all, are:
+= -- 128
+> -- 40
+< -- 6
++ -- 16
+- -- 12
+* -- 85
+:= -- 226
+add.period$ -- 13
+call.type$ -- 4
+change.case$ -- 15
+chr.to.int$ -- 4
+cite$ -- 12
+duplicate$ -- 88
+empty$ -- 142
+format.name$ -- 16
+if$ -- 309
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 5
+newline$ -- 28
+num.names$ -- 16
+pop$ -- 37
+preamble$ -- 1
+purify$ -- 12
+quote$ -- 0
+skip$ -- 63
+stack$ -- 0
+substring$ -- 42
+swap$ -- 13
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 39
+warning$ -- 4
+while$ -- 15
+width$ -- 0
+write$ -- 57
+(There were 9 error messages)
