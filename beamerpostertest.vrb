@@ -1,83 +1,4 @@
-\documentclass[final,t]{beamer}
-\mode<presentation>
-{
-%\usetheme{Lankton}
-%  \usetheme{Berlin} 
-%  \usetheme{Warsaw}
-%  \usetheme{Aachen}
-%  \usetheme{Oldi6}
-%  \usetheme{I6td}
-%  \usetheme{I6dv}
-%  \usetheme{I6pd}
-%  \usetheme{I6pd2}
-%  \usetheme{PHI6}
-%  \usetheme{PHCVD}
-  \usetheme{PH}
-%\usetheme{Icy2}
-}
-% additional settings
-\setbeamerfont{itemize}{size=\normalsize}
-\setbeamerfont{itemize/enumerate body}{size=\normalsize}
-\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
-
-%additional packages
-\usepackage{times} 
-\usepackage{amsmath,amsthm, amssymb, latexsym}
-\usepackage{exscale} \boldmath 
-\usepackage{booktabs, array}
-\usepackage{rotating} %sideways environment 
-\usepackage[english]{babel}
-\usepackage[latin1]{inputenc}
-\usepackage{xspace}
-\usepackage{url}
-\usepackage{hyperref}
-\usepackage{multicol}
-\usepackage{xspace}
-\usepackage{natbib}
-\usepackage[orientation=landscape,size=a1,scale=0.85]{beamerposter}
-\usepackage{Sweave}
-
-% To produce both postscript and pdf graphics, remove the eps and pdf
-% parameters in the next line. Set default plot size to 5 x 3.5 in.
-
-%\listfiles
-%\graphicspath{{figures/}}
-% Display a grid to help align images
-%\beamertemplategridbackground[1cm]
-
-\title{Test R Sweave Beamer BeamerPoster Poster on R}
-\author[Paul Hurley]{Paul Hurley}
-\institute[http://www.paulhurley.co.uk]{http://www.paulhurley.co.uk}
-\date[Aug. 16 , 2010]{Aug. 16 , 2010}
-
-\DefineVerbatimEnvironment{Sinput}{Verbatim} {xleftmargin=2em}
-\DefineVerbatimEnvironment{Soutput}{Verbatim}{xleftmargin=2em}
-\DefineVerbatimEnvironment{Scode}{Verbatim}{xleftmargin=2em}
-\fvset{listparameters={\setlength{\topsep}{0pt}}}
-\renewenvironment{Schunk}{\vspace{\topsep}}{\vspace{\topsep}}
-
-
-\makeatletter
-\DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
-\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
-\def\eg{{e.g}\onedot} \def\Eg{{E.g}\onedot}
-\def\ie{{i.e}\onedot} \def\Ie{{I.e}\onedot}
-\def\cf{{c.f}\onedot} \def\Cf{{C.f}\onedot}
-\def\etc{{etc}\onedot}
-\def\vs{{vs}\onedot}
-\def\wrt{w.r.t\onedot}
-\def\dof{d.o.f\onedot}
-\def\etal{{et al}\onedot}
-\makeatother
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{document}
-\input{beamerpostertest-concordance}
-\bibliographystyle{plainnat}
-
-\begin{frame}[fragile]
-  \begin{columns}[t]
+\begin {columns}[t]
 
     %-- Column 1 ---------------------------------------------------
     \begin{column}{0.32\linewidth}
@@ -88,8 +9,8 @@
         This part is the summary.  People might read this
         \\
         These analyses were done on \today, using the following versions of R\citepp{i1609}, Sweave\citep{i1608}, \LaTeX, the
-operating system, and add-on packages ggplot2\citep{i1606} and others using Sweave template 
-beamerpostertest.Rnw.  It took approx \input{beamerpostertest.Rnw_time} 
+operating system, and add-on packages ggplot2\citep{i1606} and others using Sweave template
+beamerpostertest.Rnw.  It took approx \input{beamerpostertest.Rnw_time}
 sec to process.
 \scriptsize
 \begin{itemize}\raggedright
@@ -111,8 +32,8 @@ You can insert tables of data
 \\
 \begin{Schunk}
 \begin{Sinput}
-> datatable<-data.frame(x=1:20, 
-+                       y=rnorm(20,mean=50, sd=15), 
+> datatable<-data.frame(x=1:20,
++                       y=rnorm(20,mean=50, sd=15),
 +                       type=as.factor(c("Red", "Blue", "Green", "Yellow", "Purple")))
 > datatable$z<-datatable$y+(datatable$y^(datatable$x*0.1))
 \end{Sinput}
@@ -122,28 +43,28 @@ You can insert tables of data
 % Tue Sep 25 19:24:38 2012
 \begin{tabular}{rrlr}
   \hline
-x & y & type & z \\ 
+x & y & type & z \\
   \hline
-  1 & 44.60 & Red & 46.07 \\ 
-    2 & 61.32 & Blue & 63.60 \\ 
-    3 & 65.36 & Green & 68.86 \\ 
-    4 & 55.79 & Yellow & 60.78 \\ 
-    5 & 53.43 & Purple & 60.74 \\ 
-    6 & 51.90 & Red & 62.59 \\ 
-    7 & 53.72 & Blue & 69.98 \\ 
-    8 & 41.90 & Green & 61.75 \\ 
-    9 & 23.35 & Yellow & 40.39 \\ 
-   10 & 44.20 & Purple & 88.39 \\ 
-   11 & 79.49 & Red & 202.60 \\ 
-   12 & 53.91 & Blue & 173.59 \\ 
-   13 & 40.91 & Green & 165.46 \\ 
-   14 & 51.10 & Yellow & 297.57 \\ 
-   15 & 45.35 & Purple & 350.74 \\ 
-   16 & 57.20 & Red & 705.57 \\ 
-   17 & 45.28 & Blue & 698.38 \\ 
-   18 & 55.39 & Green & 1430.20 \\ 
-   19 & 34.42 & Yellow & 866.30 \\ 
-   20 & 35.37 & Purple & 1286.62 \\ 
+  1 & 44.60 & Red & 46.07 \\
+    2 & 61.32 & Blue & 63.60 \\
+    3 & 65.36 & Green & 68.86 \\
+    4 & 55.79 & Yellow & 60.78 \\
+    5 & 53.43 & Purple & 60.74 \\
+    6 & 51.90 & Red & 62.59 \\
+    7 & 53.72 & Blue & 69.98 \\
+    8 & 41.90 & Green & 61.75 \\
+    9 & 23.35 & Yellow & 40.39 \\
+   10 & 44.20 & Purple & 88.39 \\
+   11 & 79.49 & Red & 202.60 \\
+   12 & 53.91 & Blue & 173.59 \\
+   13 & 40.91 & Green & 165.46 \\
+   14 & 51.10 & Yellow & 297.57 \\
+   15 & 45.35 & Purple & 350.74 \\
+   16 & 57.20 & Red & 705.57 \\
+   17 & 45.28 & Blue & 698.38 \\
+   18 & 55.39 & Green & 1430.20 \\
+   19 & 34.42 & Yellow & 866.30 \\
+   20 & 35.37 & Purple & 1286.62 \\
    \hline
 \end{tabular}\end{block}
 
@@ -201,7 +122,7 @@ such that $f’(x_3) = 0$.
         \includegraphics[width=.6\columnwidth]{beamerpostertest-fig2}
         \end{figure}
       \end{block}
-      
+
     \end{column}%2
 
     %-- Column 3 ---------------------------------------------------
@@ -221,7 +142,7 @@ such that $f’(x_3) = 0$.
         {\LARGE LARGE size}\\
         {\huge huge size}\\
         {\Huge Huge size}\\
-        
+
       \end{block}
 
       %-- Block 3-2
@@ -235,7 +156,7 @@ such that $f’(x_3) = 0$.
         To change the logo (if you don't want to represent for Georgia Tech).
         Replace the file {\tt logo.png} and with the logo of your choice!
         Make sure the background is black.
-      \end{block} 
+      \end{block}
 \begin{block}{So, who uses R ?}
       Well, the buzz around R is growing.
       The popularity of R is growing, with articles appearing in major publications such as
@@ -243,28 +164,22 @@ such that $f’(x_3) = 0$.
       \begin{figure}[htb]
 \includegraphics[width=.70\columnwidth]{NYTimes_R_Article.png}
 \end{figure}
-Today, R is used at many Fortune 500 companies such as Google, Merck, Pfizer, 
+Today, R is used at many Fortune 500 companies such as Google, Merck, Pfizer,
 Shell and the FDA\citep{i1705} and many others.
     \end{block}
 %-- Block 3-4
       \begin{block}{Bibliography}
-			% Note: Rsystem reference is defined inside feh.bib. It is a slightly
-			% edited version of the output of citation().
-			\bibliography{testwhyR}
-			\normalsize
-		\end{block}
- 
+% Note: Rsystem reference is defined inside feh.bib. It is a slightly
+% edited version of the output of citation().
+\bibliography{testwhyR}
+\normalsize
+\end{block}
+
  \begin{block}{Creative Commons Sharealike}
  \includegraphics[width=.15\columnwidth]{cc_attribution_sharealike}
  \end{block}
- 
+
     \end{column}%3
 
   \end{columns}
-
-\end{frame}
-
-
-\end{document}
-
 

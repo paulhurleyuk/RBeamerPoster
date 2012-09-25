@@ -1,7 +1,7 @@
 \documentclass[final,t]{beamer}
 \mode<presentation>
 {
-\usetheme{Lankton}
+%\usetheme{Lankton}
 %  \usetheme{Berlin} 
 %  \usetheme{Warsaw}
 %  \usetheme{Aachen}
@@ -12,6 +12,7 @@
 %  \usetheme{I6pd2}
 %  \usetheme{PHI6}
 %  \usetheme{PHCVD}
+  \usetheme{PH}
 %\usetheme{Icy2}
 }
 % additional settings
@@ -21,16 +22,17 @@
 
 %additional packages
 \usepackage{times} 
-%\usepackage{amsmath,amsthm, amssymb, latexsym}
-%\usepackage{exscale} \boldmath 
-%\usepackage{booktabs, array}
-%\usepackage{rotating} %sideways environment \usepackage[english]{babel}
+\usepackage{amsmath,amsthm, amssymb, latexsym}
+\usepackage{exscale} \boldmath 
+\usepackage{booktabs, array}
+\usepackage{rotating} %sideways environment 
+\usepackage[english]{babel}
 \usepackage[latin1]{inputenc}
-%\usepackage{url}
-%\usepackage{hyperref}
-
-%\usepackage{multicol}
-%\usepackage{xspace}
+\usepackage{xspace}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{xspace}
 \usepackage{natbib}
 \usepackage[orientation=landscape,size=a1,scale=0.85]{beamerposter}
 \usepackage{Sweave}
@@ -48,20 +50,25 @@
 \institute[http://www.paulhurley.co.uk]{http://www.paulhurley.co.uk}
 \date[Aug. 16 , 2010]{Aug. 16 , 2010}
 
-% abbreviations
-% \usepackage{xspace}
-% \makeatletter
-% \DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
-% \def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
-% \def\eg{{e.g}\onedot} \def\Eg{{E.g}\onedot}
-% \def\ie{{i.e}\onedot} \def\Ie{{I.e}\onedot}
-% \def\cf{{c.f}\onedot} \def\Cf{{C.f}\onedot}
-% \def\etc{{etc}\onedot}
-% \def\vs{{vs}\onedot}
-% \def\wrt{w.r.t\onedot}
-% \def\dof{d.o.f\onedot}
-% \def\etal{{et al}\onedot}
-% \makeatother
+\DefineVerbatimEnvironment{Sinput}{Verbatim} {xleftmargin=2em}
+\DefineVerbatimEnvironment{Soutput}{Verbatim}{xleftmargin=2em}
+\DefineVerbatimEnvironment{Scode}{Verbatim}{xleftmargin=2em}
+\fvset{listparameters={\setlength{\topsep}{0pt}}}
+\renewenvironment{Schunk}{\vspace{\topsep}}{\vspace{\topsep}}
+
+
+\makeatletter
+\DeclareRobustCommand\onedot{\futurelet\@let@token\@onedot}
+\def\@onedot{\ifx\@let@token.\else.\null\fi\xspace}
+\def\eg{{e.g}\onedot} \def\Eg{{E.g}\onedot}
+\def\ie{{i.e}\onedot} \def\Ie{{I.e}\onedot}
+\def\cf{{c.f}\onedot} \def\Cf{{C.f}\onedot}
+\def\etc{{etc}\onedot}
+\def\vs{{vs}\onedot}
+\def\wrt{w.r.t\onedot}
+\def\dof{d.o.f\onedot}
+\def\etal{{et al}\onedot}
+\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -78,7 +85,8 @@
 	#library(stringr)
 	options(width=80)
 @ 
-\begin{frame}{}
+
+\begin{frame}[fragile]
   \begin{columns}[t]
 
     %-- Column 1 ---------------------------------------------------
@@ -100,25 +108,28 @@ toLatex(sessionInfo(), locale=FALSE)
 \normalsize
       \end{block}
 
-      %-- Block 1-4
-      \begin{block}{Tables}
-        You can insert tables of data
-        \\
-<<label=makdedata, include=FALSE, echo=FALSE>>= 
-datatable<-data.frame(x=1:20, y=rnorm(20,mean=50, sd=15), type=as.factor(c("Red", "Blue", "Green", "Yellow", "Purple")))
+%-- Block 1-4
+\begin{block}{Tables}
+You can insert tables of data
+\\
+<<label=makdedata, include=FALSE, echo=TRUE>>= 
+datatable<-data.frame(x=1:20, 
+                      y=rnorm(20,mean=50, sd=15), 
+                      type=as.factor(c("Red", "Blue", "Green", "Yellow", "Purple")))
 datatable$z<-datatable$y+(datatable$y^(datatable$x*0.1))
 @ 
+\\
 <<label=xtable, results=tex, echo=FALSE>>=
-		         print(
-		         	xtable(
-		         		datatable
-		         		),
-		         		latex.environments=c("center"), 
-		         		floating=FALSE, 
-		         		include.rownames=FALSE
-		         	)
+print(
+xtable(
+datatable
+),
+latex.environments=c("center"), 
+floating=FALSE, 
+include.rownames=FALSE
+)
 @    
-      \end{block}
+\end{block}
 
 %-- Block 1-5
       \begin{block}{Packages}
@@ -275,6 +286,7 @@ Shell and the FDA\citep{i1705} and many others.
     \end{column}%3
 
   \end{columns}
+
 \end{frame}
 
 <<label=bye, include=FALSE, echo=FALSE>>= 
